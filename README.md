@@ -37,5 +37,4 @@ Author
 
 Adhithya Venkatesh
 
-GitHub: 
-LinkedIn: 
+LinkedIn: https://www.linkedin.com/in/adhithya-venkatesh-4a87562bb/
