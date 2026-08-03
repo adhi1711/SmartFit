@@ -35,7 +35,7 @@ Getting Started
 
 Author
 
-Atharva Patil
+Adhithya Venkatesh
 
-GitHub: https://github.com/atharvagawd
-LinkedIn: https://www.linkedin.com/in/atharva-patil-a13702380
+GitHub: 
+LinkedIn: 
