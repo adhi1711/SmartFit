@@ -27,7 +27,7 @@ https://smart-fit-ai-coach.netlify.app/
 Getting Started
 
 1. Clone the repository:
-   git clone https://github.com/atharvagawd/SmartFit-AI-Coach.git
+   git clone (https://github.com/adhi1711/SmartFit)
 
 2. Open the project folder.
 
