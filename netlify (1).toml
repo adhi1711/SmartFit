@@ -1,0 +1,13 @@
+# netlify.toml — FitMind AI deployment config
+# This file tells Netlify exactly where your site files are.
+# Place this file in the SAME folder as index.html, style.css, script.js
+
+[build]
+  # Publish the current directory (no build step needed — pure static site)
+  publish = "."
+
+# Redirect all 404s back to index.html (handles single-page anchor navigation)
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

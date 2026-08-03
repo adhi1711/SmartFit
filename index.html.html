@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitMind AI — Personalized Fitness Coach</title>
+  <meta name="description" content="AI-Based Personalized Fitness Coach using Machine Learning and Generative AI" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Phosphor Icons (lightweight icon library) -->
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+
+  <!-- Chart.js for weight progress chart -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <a href="#home" class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      <span>FitMind<span class="accent">AI</span></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#features" class="nav-link">Features</a></li>
+      <li><a href="#coach" class="nav-link">Get Coach</a></li>
+      <li><a href="#progress" class="nav-link">Progress</a></li>
+      <li><a href="#nutrition" class="nav-link">Nutrition</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="ph ph-sun" id="themeIcon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        ML + Generative AI · Academic Project
+      </div>
+      <h1 class="hero-title">
+        Your Body,<br />
+        <span class="title-accent">Decoded</span><br />
+        by AI.
+      </h1>
+      <p class="hero-subtitle">
+        An intelligent fitness coaching system powered by Machine Learning classification
+        and Generative AI — delivering hyper-personalized workout plans based on your
+        unique biometric profile.
+      </p>
+      <div class="hero-cta">
+        <a href="#coach" class="btn btn-primary">
+          <i class="ph ph-lightning"></i> Start My Plan
+        </a>
+        <a href="#about" class="btn btn-ghost">
+          <i class="ph ph-play-circle"></i> How It Works
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-chip"><span class="stat-num">98%</span><span class="stat-label">Accuracy</span></div>
+        <div class="stat-chip"><span class="stat-num">500+</span><span class="stat-label">Exercises</span></div>
+        <div class="stat-chip"><span class="stat-num">5</span><span class="stat-label">AI Goals</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <div class="screen-header">
+            <div class="screen-avatar">AK</div>
+            <div>
+              <div class="screen-name">Alex Kumar</div>
+              <div class="screen-level">Intermediate · Day 3</div>
+            </div>
+            <div class="screen-badge">LIVE</div>
+          </div>
+          <div class="screen-ring">
+            <svg viewBox="0 0 120 120" class="ring-svg">
+              <circle cx="60" cy="60" r="50" class="ring-bg" />
+              <circle cx="60" cy="60" r="50" class="ring-fill ring-calories" style="--pct:0.72" />
+            </svg>
+            <div class="ring-center">
+              <div class="ring-val">1,840</div>
+              <div class="ring-lbl">kcal</div>
+            </div>
+          </div>
+          <div class="screen-metrics">
+            <div class="metric-pill">
+              <i class="ph ph-footprints"></i>
+              <span>8,420 steps</span>
+            </div>
+            <div class="metric-pill active-pill">
+              <i class="ph ph-heartbeat"></i>
+              <span>142 bpm</span>
+            </div>
+          </div>
+          <div class="screen-workout">
+            <div class="workout-title">Today's Plan</div>
+            <div class="workout-item done"><i class="ph ph-check-circle-fill"></i> Warm-up · 10 min</div>
+            <div class="workout-item done"><i class="ph ph-check-circle-fill"></i> Push Day · 35 min</div>
+            <div class="workout-item current"><i class="ph ph-circle-dashed"></i> Core Burn · 20 min</div>
+            <div class="workout-item"><i class="ph ph-circle"></i> Cool-down · 5 min</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll to explore</span>
+      <i class="ph ph-arrow-down"></i>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-label">About the Project</div>
+      <h2 class="section-title">Two AI Engines,<br /><span class="accent">One Smart Coach</span></h2>
+      <p class="section-desc">
+        FitMind AI combines two cutting-edge technologies to deliver truly personalized fitness guidance —
+        no generic plans, no guesswork.
+      </p>
+
+      <div class="about-grid">
+        <!-- ML Card -->
+        <div class="about-card card-ml reveal">
+          <div class="card-icon-wrap ml-icon">
+            <i class="ph ph-brain"></i>
+          </div>
+          <div class="card-tag">Engine 01</div>
+          <h3>Machine Learning<br />Classification</h3>
+          <p>
+            A rule-based ML model analyzes your biometric inputs — age, weight, height,
+            activity level, and fitness goal — to classify you into a precise fitness tier:
+            <strong>Beginner</strong>, <strong>Intermediate</strong>, or <strong>Advanced</strong>.
+          </p>
+          <ul class="feature-list">
+            <li><i class="ph ph-check-fat"></i> BMI & body composition analysis</li>
+            <li><i class="ph ph-check-fat"></i> Activity level scoring</li>
+            <li><i class="ph ph-check-fat"></i> Goal-to-tier mapping</li>
+            <li><i class="ph ph-check-fat"></i> Dynamic re-classification</li>
+          </ul>
+          <div class="card-flow">
+            <span class="flow-step">Input Data</span>
+            <i class="ph ph-arrow-right"></i>
+            <span class="flow-step">ML Model</span>
+            <i class="ph ph-arrow-right"></i>
+            <span class="flow-step active-step">Tier Output</span>
+          </div>
+        </div>
+
+        <!-- GenAI Card -->
+        <div class="about-card card-gen reveal">
+          <div class="card-icon-wrap gen-icon">
+            <i class="ph ph-sparkle"></i>
+          </div>
+          <div class="card-tag">Engine 02</div>
+          <h3>Generative AI<br />Workout Creator</h3>
+          <p>
+            Based on your ML-classified tier, a Generative AI engine synthesizes a
+            complete weekly workout plan — including exercises, sets, reps, rest periods,
+            and calorie estimates — tailored to your exact goal.
+          </p>
+          <ul class="feature-list">
+            <li><i class="ph ph-check-fat"></i> Dynamic plan generation</li>
+            <li><i class="ph ph-check-fat"></i> Goal-specific exercise selection</li>
+            <li><i class="ph ph-check-fat"></i> Calorie burn computation</li>
+            <li><i class="ph ph-check-fat"></i> Recovery & tip generation</li>
+          </ul>
+          <div class="card-flow">
+            <span class="flow-step">Tier + Goal</span>
+            <i class="ph ph-arrow-right"></i>
+            <span class="flow-step">Gen AI</span>
+            <i class="ph ph-arrow-right"></i>
+            <span class="flow-step active-step">Workout Plan</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Architecture -->
+      <div class="arch-section reveal">
+        <div class="arch-title">System Architecture</div>
+        <div class="arch-flow">
+          <div class="arch-node"><i class="ph ph-user-circle"></i><span>User Input</span></div>
+          <div class="arch-arrow"><i class="ph ph-arrow-right"></i></div>
+          <div class="arch-node highlight-node"><i class="ph ph-brain"></i><span>ML Engine</span></div>
+          <div class="arch-arrow"><i class="ph ph-arrow-right"></i></div>
+          <div class="arch-node highlight-node gen-node"><i class="ph ph-sparkle"></i><span>Gen AI</span></div>
+          <div class="arch-arrow"><i class="ph ph-arrow-right"></i></div>
+          <div class="arch-node"><i class="ph ph-chart-bar"></i><span>Plan Output</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURES ===================== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-label">Core Features</div>
+      <h2 class="section-title">Everything Your Body<br /><span class="accent">Needs to Perform</span></h2>
+
+      <div class="features-grid">
+
+        <div class="feat-card reveal">
+          <div class="feat-icon"><i class="ph ph-footprints"></i></div>
+          <h3>Activity Tracking</h3>
+          <p>Monitor steps, calories burned, active minutes, and workout streaks in real-time with a visual dashboard.</p>
+          <div class="feat-metrics">
+            <div class="feat-bar"><div class="bar-fill" style="--w:78%"></div></div>
+            <span>78% of daily goal</span>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <div class="feat-icon accent-icon"><i class="ph ph-target"></i></div>
+          <h3>Personalized Recs</h3>
+          <p>ML-powered recommendations that adapt to your progress, recovery status, and shifting fitness goals over time.</p>
+          <div class="feat-tags">
+            <span class="tag">Weight Loss</span>
+            <span class="tag">Muscle Gain</span>
+            <span class="tag">Maintenance</span>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <div class="feat-icon lime-icon"><i class="ph ph-list-dashes"></i></div>
+          <h3>AI Workout Plans</h3>
+          <p>Generative AI creates day-by-day weekly plans complete with exercises, sets, reps, rest periods, and coaching tips.</p>
+          <div class="feat-days">
+            <span class="day active-day">M</span>
+            <span class="day active-day">T</span>
+            <span class="day active-day">W</span>
+            <span class="day">T</span>
+            <span class="day active-day">F</span>
+            <span class="day">S</span>
+            <span class="day">S</span>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <div class="feat-icon purple-icon"><i class="ph ph-heartbeat"></i></div>
+          <h3>Health Metrics</h3>
+          <p>BMI calculation, calorie need estimation, and fitness score tracking give you a complete picture of your health.</p>
+          <div class="feat-score">
+            <span class="score-num">82</span>
+            <span class="score-label">FitScore™</span>
+          </div>
+        </div>
+
+        <div class="feat-card reveal">
+          <div class="feat-icon orange-icon"><i class="ph ph-flame"></i></div>
+          <h3>Calorie Engine</h3>
+          <p>Science-backed TDEE and Mifflin–St Jeor equations compute your precise daily caloric needs and burn estimates.</p>
+          <div class="feat-formula">TDEE = BMR × Activity Factor</div>
+        </div>
+
+        <div class="feat-card reveal">
+          <div class="feat-icon teal-icon"><i class="ph ph-trophy"></i></div>
+          <h3>Progress Milestones</h3>
+          <p>Gamified milestone tracking with streak counters and achievement badges keep you motivated week after week.</p>
+          <div class="feat-badges">
+            <span class="badge-icon">🔥</span>
+            <span class="badge-icon">💪</span>
+            <span class="badge-icon">⚡</span>
+            <span class="badge-icon badge-locked">🏆</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INPUT FORM ===================== -->
+  <section class="coach-section" id="coach">
+    <div class="container">
+      <div class="section-label">AI Coach</div>
+      <h2 class="section-title">Get Your <span class="accent">Personalized Plan</span></h2>
+      <p class="section-desc">Fill in your details below. Our ML engine will classify your fitness level and generate a complete workout plan just for you.</p>
+
+      <div class="coach-layout">
+        <!-- FORM -->
+        <div class="form-card reveal">
+          <div class="form-header">
+            <i class="ph ph-user-circle-plus"></i>
+            <span>Your Biometric Profile</span>
+          </div>
+
+          <form id="fitnessForm" novalidate>
+            <div class="form-grid">
+
+              <div class="form-group">
+                <label for="age">Age <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-calendar-blank"></i>
+                  <input type="number" id="age" name="age" placeholder="e.g. 22" min="10" max="90" required />
+                  <span class="input-unit">yrs</span>
+                </div>
+                <span class="field-error" id="ageError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="weight">Weight <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-scales"></i>
+                  <input type="number" id="weight" name="weight" placeholder="e.g. 70" min="30" max="250" required />
+                  <span class="input-unit">kg</span>
+                </div>
+                <span class="field-error" id="weightError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="height">Height <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-ruler"></i>
+                  <input type="number" id="height" name="height" placeholder="e.g. 175" min="100" max="250" required />
+                  <span class="input-unit">cm</span>
+                </div>
+                <span class="field-error" id="heightError"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="gender">Biological Sex <span class="req">*</span></label>
+                <div class="input-wrap select-wrap">
+                  <i class="ph ph-gender-intersex"></i>
+                  <select id="gender" name="gender" required>
+                    <option value="">Select...</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="form-group full-width">
+              <label>Fitness Goal <span class="req">*</span></label>
+              <div class="goal-grid">
+                <label class="goal-card">
+                  <input type="radio" name="goal" value="weight_loss" />
+                  <div class="goal-inner">
+                    <i class="ph ph-trend-down"></i>
+                    <span>Weight Loss</span>
+                  </div>
+                </label>
+                <label class="goal-card">
+                  <input type="radio" name="goal" value="muscle_gain" />
+                  <div class="goal-inner">
+                    <i class="ph ph-barbell"></i>
+                    <span>Muscle Gain</span>
+                  </div>
+                </label>
+                <label class="goal-card">
+                  <input type="radio" name="goal" value="maintenance" />
+                  <div class="goal-inner">
+                    <i class="ph ph-equals"></i>
+                    <span>Maintenance</span>
+                  </div>
+                </label>
+                <label class="goal-card">
+                  <input type="radio" name="goal" value="endurance" />
+                  <div class="goal-inner">
+                    <i class="ph ph-timer"></i>
+                    <span>Endurance</span>
+                  </div>
+                </label>
+                <label class="goal-card">
+                  <input type="radio" name="goal" value="flexibility" />
+                  <div class="goal-inner">
+                    <i class="ph ph-yoga"></i>
+                    <span>Flexibility</span>
+                  </div>
+                </label>
+              </div>
+              <span class="field-error" id="goalError"></span>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="activity">Activity Level <span class="req">*</span></label>
+              <div class="activity-slider-wrap">
+                <input type="range" id="activity" name="activity" min="1" max="5" value="2" class="activity-slider" />
+                <div class="activity-labels">
+                  <span>Sedentary</span>
+                  <span>Light</span>
+                  <span>Moderate</span>
+                  <span>Active</span>
+                  <span>Very Active</span>
+                </div>
+                <div class="activity-display" id="activityDisplay">Light Activity</div>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="name">Your Name <span class="opt">(optional)</span></label>
+              <div class="input-wrap">
+                <i class="ph ph-user"></i>
+                <input type="text" id="name" name="name" placeholder="e.g. Alex Kumar" />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <i class="ph ph-sparkle"></i>
+              <span id="btnText">Generate My AI Plan</span>
+              <div class="btn-loader" id="btnLoader"></div>
+            </button>
+          </form>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="output-panel" id="outputPanel">
+          <div class="output-placeholder" id="outputPlaceholder">
+            <div class="placeholder-icon"><i class="ph ph-robot"></i></div>
+            <p>Your personalized AI plan will appear here after you submit your details.</p>
+          </div>
+
+          <div class="output-content" id="outputContent" style="display:none">
+
+            <!-- Profile Header -->
+            <div class="output-header">
+              <div class="output-avatar" id="outputAvatar">AK</div>
+              <div>
+                <div class="output-name" id="outputName">Alex Kumar</div>
+                <div class="output-tier" id="outputTier">
+                  <span class="tier-badge" id="tierBadge">Intermediate</span>
+                </div>
+              </div>
+              <button class="btn-download" id="downloadBtn" title="Download Plan">
+                <i class="ph ph-download-simple"></i>
+              </button>
+            </div>
+
+            <!-- Health Metrics -->
+            <div class="metrics-row">
+              <div class="metric-card">
+                <div class="metric-val" id="metBMI">—</div>
+                <div class="metric-key">BMI</div>
+                <div class="metric-sub" id="metBMIStatus">—</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-val" id="metBMR">—</div>
+                <div class="metric-key">BMR</div>
+                <div class="metric-sub">kcal/day</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-val" id="metTDEE">—</div>
+                <div class="metric-key">TDEE</div>
+                <div class="metric-sub">kcal/day</div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-val" id="metTarget">—</div>
+                <div class="metric-key">Target</div>
+                <div class="metric-sub">kcal/day</div>
+              </div>
+            </div>
+
+            <!-- AI Typing indicator -->
+            <div class="ai-generating" id="aiGenerating">
+              <div class="ai-dots"><span></span><span></span><span></span></div>
+              <span>Generative AI crafting your plan…</span>
+            </div>
+
+            <!-- Workout Plan -->
+            <div class="workout-plan" id="workoutPlan" style="display:none">
+              <div class="plan-title">
+                <i class="ph ph-sparkle"></i>
+                Your AI-Generated Weekly Plan
+              </div>
+              <div class="plan-days" id="planDays"></div>
+            </div>
+
+            <!-- Tips -->
+            <div class="tips-section" id="tipsSection" style="display:none">
+              <div class="tips-title"><i class="ph ph-lightbulb"></i> AI Coaching Tips</div>
+              <ul class="tips-list" id="tipsList"></ul>
+            </div>
+
+            <!-- Calorie Breakdown -->
+            <div class="calorie-section" id="calorieSection" style="display:none">
+              <div class="calorie-title"><i class="ph ph-flame"></i> Weekly Calorie Overview</div>
+              <div class="calorie-bars" id="calorieBars"></div>
+            </div>
+
+            <!-- Daily Nutrition Needs -->
+            <div class="daily-nutrition" id="dailyNutrition" style="display:none">
+              <div class="dn-title"><i class="ph ph-fork-knife"></i> Daily Nutrition Targets</div>
+              <div class="dn-subtitle" id="dnSubtitle"></div>
+              <div class="dn-macro-grid" id="dnMacroGrid"></div>
+              <div class="dn-micro-row" id="dnMicroRow"></div>
+              <a href="#nutrition" class="dn-logger-link">
+                <i class="ph ph-clipboard-text"></i> Log today's meals in Nutrition Logger ↓
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROGRESS ===================== -->
+  <section class="progress-section" id="progress">
+    <div class="container">
+      <div class="section-label">Progress Tracker</div>
+      <h2 class="section-title">Log & Track Your <span class="accent">Journey</span></h2>
+      <p class="section-desc">Enter your real activity data below. Every entry is saved to your browser and drives the chart, stats, and achievements — zero fake numbers.</p>
+
+      <div class="progress-layout">
+
+        <!-- ══ LEFT: Daily Log Entry Form ══ -->
+        <div class="daily-log-card reveal">
+
+          <div class="dlc-header">
+            <i class="ph ph-pencil-simple-line"></i>
+            <span>Log Today's Activity</span>
+            <span class="dlc-date" id="dlcDate"></span>
+          </div>
+
+          <form id="progressForm" novalidate>
+
+            <!-- Date -->
+            <div class="log-field-group">
+              <label class="log-label">📅 Date</label>
+              <div class="log-input-wrap">
+                <input type="date" id="logDate" />
+              </div>
+            </div>
+
+            <!-- Weight -->
+            <div class="log-field-group">
+              <label class="log-label">⚖️ Body Weight</label>
+              <div class="log-input-wrap">
+                <input type="number" id="logWeight" placeholder="e.g. 72.5" min="30" max="250" step="0.1" />
+                <span class="log-unit">kg</span>
+              </div>
+            </div>
+
+            <!-- Steps -->
+            <div class="log-field-group">
+              <label class="log-label">👟 Steps Taken</label>
+              <div class="log-input-wrap">
+                <input type="number" id="logSteps" placeholder="e.g. 8500" min="0" max="100000" />
+                <span class="log-unit">steps</span>
+              </div>
+            </div>
+
+            <!-- Calories Burned -->
+            <div class="log-field-group">
+              <label class="log-label">🔥 Calories Burned</label>
+              <div class="log-input-wrap">
+                <input type="number" id="logCalsBurned" placeholder="e.g. 320" min="0" max="5000" />
+                <span class="log-unit">kcal</span>
+              </div>
+            </div>
+
+            <!-- Workout Duration -->
+            <div class="log-field-group">
+              <label class="log-label">⏱️ Workout Duration</label>
+              <div class="log-input-wrap">
+                <input type="number" id="logDuration" placeholder="e.g. 45" min="0" max="480" />
+                <span class="log-unit">min</span>
+              </div>
+            </div>
+
+            <!-- Water -->
+            <div class="log-field-group">
+              <label class="log-label">💧 Water Intake</label>
+              <div class="log-input-wrap">
+                <input type="number" id="logWater" placeholder="e.g. 2.5" min="0" max="15" step="0.1" />
+                <span class="log-unit">L</span>
+              </div>
+            </div>
+
+            <!-- Sleep -->
+            <div class="log-field-group">
+              <label class="log-label">🌙 Sleep Last Night</label>
+              <div class="log-input-wrap">
+                <input type="number" id="logSleep" placeholder="e.g. 7.5" min="0" max="24" step="0.5" />
+                <span class="log-unit">hrs</span>
+              </div>
+            </div>
+
+            <!-- Workout Done -->
+            <div class="log-field-group">
+              <label class="log-label">💪 Workout Completed?</label>
+              <div class="workout-radio-row">
+                <label class="radio-pill">
+                  <input type="radio" name="workoutDone" value="yes" />
+                  <span>✅ Yes</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="workoutDone" value="no" checked />
+                  <span>❌ No</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="workoutDone" value="rest" />
+                  <span>😴 Rest Day</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Notes -->
+            <div class="log-field-group">
+              <label class="log-label">📝 Notes <span class="opt-lbl">(optional)</span></label>
+              <textarea id="logNotes" placeholder="How did it feel? Any PB? Energy level?…" rows="2"></textarea>
+            </div>
+
+            <div class="log-actions">
+              <button type="submit" class="btn btn-primary btn-log-save" id="logSaveBtn">
+                <i class="ph ph-check-circle"></i>
+                <span id="logSaveBtnText">Save Today's Log</span>
+              </button>
+              <button type="button" class="btn-log-reset" id="logResetBtn" title="Clear form">
+                <i class="ph ph-arrow-counter-clockwise"></i> Reset Form
+              </button>
+            </div>
+
+            <div class="log-success" id="logSuccess" style="display:none">
+              <i class="ph ph-check-circle-fill"></i> Log saved successfully!
+            </div>
+
+          </form>
+
+          <!-- Log History Table -->
+          <div class="log-history-section">
+            <div class="lh-header">
+              <span class="lh-title">Recent Entries</span>
+              <button class="btn-clear-history" id="clearHistoryBtn">
+                <i class="ph ph-trash"></i> Clear All
+              </button>
+            </div>
+            <div class="lh-table-wrap">
+              <table class="lh-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Wt (kg)</th>
+                    <th>Steps</th>
+                    <th>kcal</th>
+                    <th>Water</th>
+                    <th>Sleep</th>
+                    <th>Workout</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="logTableBody">
+                  <tr class="lh-empty-row" id="lhEmptyRow">
+                    <td colspan="8">No entries yet — log your first day above!</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div><!-- /daily-log-card -->
+
+        <!-- ══ RIGHT: Live Dashboard (all from real logged data) ══ -->
+        <div class="progress-right">
+
+          <!-- Summary stat cards -->
+          <div class="streak-row">
+            <div class="streak-card">
+              <i class="ph ph-fire"></i>
+              <div class="streak-val" id="statStreak">0</div>
+              <div class="streak-lbl">Day Streak</div>
+            </div>
+            <div class="streak-card">
+              <i class="ph ph-barbell"></i>
+              <div class="streak-val" id="statWorkouts">0</div>
+              <div class="streak-lbl">Workouts Done</div>
+            </div>
+            <div class="streak-card">
+              <i class="ph ph-clock-countdown"></i>
+              <div class="streak-val" id="statTime">0m</div>
+              <div class="streak-lbl">Active Time</div>
+            </div>
+            <div class="streak-card">
+              <i class="ph ph-flame"></i>
+              <div class="streak-val" id="statKcal">0</div>
+              <div class="streak-lbl">kcal Burned</div>
+            </div>
+          </div>
+
+          <!-- Weight Progress Chart (Chart.js — real data only) -->
+          <div class="chart-card">
+            <div class="chart-header">
+              <span>⚖️ Weight Progress</span>
+              <div class="chart-legend">
+                <span class="legend-dot dot-cyan"></span>Your Weight (kg)
+              </div>
+            </div>
+            <div class="chart-empty-msg" id="chartEmptyMsg">
+              <i class="ph ph-chart-line-up"></i>
+              <p>Log at least one entry with weight to see your progress chart.</p>
+            </div>
+            <canvas id="weeklyChart" style="display:none;"></canvas>
+          </div>
+
+          <!-- Today's Goals Progress (from today's log entry) -->
+          <div class="goals-progress">
+            <div class="goals-header">
+              <span>Today's Goals</span>
+              <span class="goals-date" id="goalsDate"></span>
+            </div>
+
+            <div class="goal-row">
+              <div class="goal-info">
+                <span>👟 Steps &nbsp;<span class="goal-logged" id="gpSteps">0</span> / 10,000</span>
+                <span class="goal-pct" id="gpStepsPct">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill cyan-fill" id="gpStepsBar" style="--w:0%"></div>
+              </div>
+            </div>
+
+            <div class="goal-row">
+              <div class="goal-info">
+                <span>🔥 Calories Burned &nbsp;<span class="goal-logged" id="gpCals">0</span> / <span id="gpCalsGoal">300</span> kcal</span>
+                <span class="goal-pct" id="gpCalsPct">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill lime-fill" id="gpCalsBar" style="--w:0%"></div>
+              </div>
+            </div>
+
+            <div class="goal-row">
+              <div class="goal-info">
+                <span>💧 Water &nbsp;<span class="goal-logged" id="gpWater">0</span> / 2.5 L</span>
+                <span class="goal-pct" id="gpWaterPct">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill purple-fill" id="gpWaterBar" style="--w:0%"></div>
+              </div>
+            </div>
+
+            <div class="goal-row">
+              <div class="goal-info">
+                <span>🌙 Sleep &nbsp;<span class="goal-logged" id="gpSleep">0</span> / 8 hrs</span>
+                <span class="goal-pct" id="gpSleepPct">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill orange-fill" id="gpSleepBar" style="--w:0%"></div>
+              </div>
+            </div>
+
+            <div class="goal-row">
+              <div class="goal-info">
+                <span>⏱️ Workout &nbsp;<span class="goal-logged" id="gpDuration">0</span> / 45 min</span>
+                <span class="goal-pct" id="gpDurationPct">0%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill cyan-fill" id="gpDurationBar" style="--w:0%"></div>
+              </div>
+            </div>
+
+            <div class="goals-note" id="goalsNote">
+              Log today's activity using the form on the left to see your goal progress.
+            </div>
+          </div>
+
+          <!-- Achievements (unlocked from real data) -->
+          <div class="achievements-card">
+            <div class="ach-title">🏅 Achievements</div>
+            <div class="ach-grid" id="achGrid">
+              <!-- Rendered by JS based on real data -->
+            </div>
+          </div>
+
+        </div><!-- /progress-right -->
+
+      </div><!-- /progress-layout -->
+    </div>
+  </section>
+
+  <!-- ===================== NUTRITION LOGGER ===================== -->
+  <section class="nutrition-section" id="nutrition">
+    <div class="container">
+      <div class="section-label">Nutrition Logger</div>
+      <h2 class="section-title">Log Your <span class="accent">Food Intake</span></h2>
+      <p class="section-desc">Search and add foods to track your daily macros. The AI calculates your nutrition instantly and compares against your goals.</p>
+
+      <div class="nutrition-layout">
+
+        <!-- LEFT: Search + Log -->
+        <div class="nutrition-logger-card reveal">
+          <div class="nl-header">
+            <div class="nl-date" id="nlDate"></div>
+            <div class="nl-meal-tabs">
+              <button class="meal-tab active-tab" data-meal="breakfast">🌅 Breakfast</button>
+              <button class="meal-tab" data-meal="lunch">☀️ Lunch</button>
+              <button class="meal-tab" data-meal="dinner">🌙 Dinner</button>
+              <button class="meal-tab" data-meal="snacks">🍎 Snacks</button>
+            </div>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="food-search-wrap">
+            <i class="ph ph-magnifying-glass"></i>
+            <input type="text" id="foodSearch" placeholder="Search food (e.g. rice, egg, banana, chicken…)" autocomplete="off" />
+            <button class="btn-clear-search" id="clearSearch" title="Clear">
+              <i class="ph ph-x"></i>
+            </button>
+          </div>
+          <div class="food-suggestions" id="foodSuggestions"></div>
+
+          <!-- Selected Food Entry -->
+          <div class="food-entry-row" id="foodEntryRow" style="display:none">
+            <div class="entry-food-name" id="entryFoodName">—</div>
+            <div class="entry-controls">
+              <div class="qty-wrap">
+                <button class="qty-btn" id="qtyMinus">−</button>
+                <input type="number" id="qtyInput" value="100" min="1" max="2000" class="qty-input" />
+                <span class="qty-unit" id="qtyUnit">g</span>
+                <button class="qty-btn" id="qtyPlus">+</button>
+              </div>
+              <button class="btn-add-food" id="addFoodBtn">
+                <i class="ph ph-plus-circle"></i> Add
+              </button>
+            </div>
+            <div class="entry-preview" id="entryPreview"></div>
+          </div>
+
+          <!-- Logged Items -->
+          <div class="logged-items-header">
+            <span class="logged-label" id="loggedMealLabel">Breakfast</span>
+            <button class="btn-clear-log" id="clearLogBtn" title="Clear all today">
+              <i class="ph ph-trash"></i> Clear Day
+            </button>
+          </div>
+          <div class="logged-items" id="loggedItems">
+            <div class="log-empty" id="logEmpty">
+              <i class="ph ph-bowl-food"></i>
+              <span>No foods logged yet. Search above to add.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Nutrition Dashboard -->
+        <div class="nutrition-dashboard reveal">
+
+          <!-- Calorie Ring -->
+          <div class="cal-ring-card">
+            <div class="cal-ring-wrap">
+              <svg viewBox="0 0 140 140" class="cal-ring-svg" id="calRingSvg">
+                <circle cx="70" cy="70" r="58" class="ring-bg" />
+                <circle cx="70" cy="70" r="58" class="ring-fill ring-calories" id="calRingFill" style="--pct:0" />
+              </svg>
+              <div class="cal-ring-center">
+                <div class="cal-ring-val" id="calRingVal">0</div>
+                <div class="cal-ring-lbl">kcal eaten</div>
+                <div class="cal-ring-target" id="calRingTarget">/ 2000 goal</div>
+              </div>
+            </div>
+            <div class="cal-ring-stats">
+              <div class="crs-item">
+                <span class="crs-val" id="crsProtein">0g</span>
+                <span class="crs-lbl">Protein</span>
+              </div>
+              <div class="crs-item">
+                <span class="crs-val" id="crsCarbs">0g</span>
+                <span class="crs-lbl">Carbs</span>
+              </div>
+              <div class="crs-item">
+                <span class="crs-val" id="crsFat">0g</span>
+                <span class="crs-lbl">Fat</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Macro Progress Bars -->
+          <div class="macro-bars-card">
+            <div class="mb-title">Macros vs Daily Goal</div>
+
+            <div class="mb-row">
+              <div class="mb-info">
+                <span class="mb-name protein-color">🥩 Protein</span>
+                <span class="mb-vals"><span id="mbProteinEaten">0</span>g / <span id="mbProteinGoal">—</span>g</span>
+              </div>
+              <div class="mb-bar-bg"><div class="mb-bar protein-bar" id="mbProteinBar" style="--w:0%"></div></div>
+            </div>
+
+            <div class="mb-row">
+              <div class="mb-info">
+                <span class="mb-name carb-color">🍚 Carbs</span>
+                <span class="mb-vals"><span id="mbCarbsEaten">0</span>g / <span id="mbCarbsGoal">—</span>g</span>
+              </div>
+              <div class="mb-bar-bg"><div class="mb-bar carb-bar" id="mbCarbsBar" style="--w:0%"></div></div>
+            </div>
+
+            <div class="mb-row">
+              <div class="mb-info">
+                <span class="mb-name fat-color">🥑 Fat</span>
+                <span class="mb-vals"><span id="mbFatEaten">0</span>g / <span id="mbFatGoal">—</span>g</span>
+              </div>
+              <div class="mb-bar-bg"><div class="mb-bar fat-bar" id="mbFatBar" style="--w:0%"></div></div>
+            </div>
+
+            <div class="mb-row">
+              <div class="mb-info">
+                <span class="mb-name fiber-color">🌾 Fiber</span>
+                <span class="mb-vals"><span id="mbFiberEaten">0</span>g / <span id="mbFiberGoal">—</span>g</span>
+              </div>
+              <div class="mb-bar-bg"><div class="mb-bar fiber-bar" id="mbFiberBar" style="--w:0%"></div></div>
+            </div>
+
+            <div class="mb-row">
+              <div class="mb-info">
+                <span class="mb-name sugar-color">🍬 Sugar</span>
+                <span class="mb-vals"><span id="mbSugarEaten">0</span>g / <span id="mbSugarGoal">—</span>g</span>
+              </div>
+              <div class="mb-bar-bg"><div class="mb-bar sugar-bar" id="mbSugarBar" style="--w:0%"></div></div>
+            </div>
+
+            <div class="mb-goal-note" id="mbGoalNote">
+              <i class="ph ph-info"></i>
+              Generate your AI plan above to set personalized nutrition goals.
+            </div>
+          </div>
+
+          <!-- Micronutrients snapshot -->
+          <div class="micro-card">
+            <div class="micro-title">Micronutrient Snapshot</div>
+            <div class="micro-grid" id="microGrid">
+              <div class="micro-item"><span class="micro-val" id="micNa">0</span><span class="micro-lbl">Sodium (mg)</span></div>
+              <div class="micro-item"><span class="micro-val" id="micCa">0</span><span class="micro-lbl">Calcium (mg)</span></div>
+              <div class="micro-item"><span class="micro-val" id="micFe">0</span><span class="micro-lbl">Iron (mg)</span></div>
+              <div class="micro-item"><span class="micro-val" id="micVitC">0</span><span class="micro-lbl">Vit-C (mg)</span></div>
+            </div>
+          </div>
+
+          <!-- AI Nutrition Insight -->
+          <div class="nutrition-insight" id="nutritionInsight" style="display:none">
+            <div class="ni-title"><i class="ph ph-sparkle"></i> AI Nutrition Insight</div>
+            <p class="ni-text" id="niText"></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo">
+            <span class="logo-icon">⬡</span>
+            <span>FitMind<span class="accent">AI</span></span>
+          </div>
+          <p>An academic project demonstrating the application of Machine Learning and Generative AI in personalized fitness coaching.</p>
+          <div class="tech-stack">
+            <span class="tech-tag">Machine Learning</span>
+            <span class="tech-tag">Generative AI</span>
+            <span class="tech-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <div class="footer-heading">Sections</div>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+            <a href="#coach">AI Coach</a>
+            <a href="#progress">Progress</a>
+            <a href="#nutrition">Nutrition</a>
+          </div>
+          <div class="footer-col">
+            <div class="footer-heading">Technology</div>
+            <a href="#">ML Classification</a>
+            <a href="#">Generative AI</a>
+            <a href="#">BMI / BMR / TDEE</a>
+            <a href="#">Fitness Science</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 FitMind AI · Academic Project · Built with HTML, CSS & JavaScript</span>
+        <span class="footer-note">Workout plans are simulated for demonstration purposes.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
